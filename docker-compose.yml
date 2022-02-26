@@ -24,8 +24,8 @@ services:
 #        UID: $U_ID
     volumes:
       - ./:/app/www
-      networks:
-        - docker-symfony-network
+    networks:
+      - docker-symfony-network
 
 networks:
   docker-symfony-network:
