@@ -11,6 +11,8 @@ services:
       - 300:80
     volumes:
       - ./public:/app/www/public
+    networks:
+      - docker-symfony-network
     depends_on:
       - php-fpm
 
@@ -22,3 +24,9 @@ services:
 #        UID: $U_ID
     volumes:
       - ./:/app/www
+      networks:
+        - docker-symfony-network
+
+networks:
+  docker-symfony-network:
+    external: true
