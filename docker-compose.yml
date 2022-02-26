@@ -5,6 +5,8 @@ services:
     container_name: nginx
     build:
       context: ./etc/docker/nginx
+#      args:
+#        UID: $U_ID
     ports:
       - 300:80
     volumes:
@@ -16,5 +18,7 @@ services:
     container_name: php-fpm
     build:
       context: ./etc/docker/php
+#      args:
+#        UID: $U_ID
     volumes:
       - ./:/app/www

@@ -1,5 +1,14 @@
 FROM php:7.4.6-fpm
 
+#ARG UID
+#EXPOSE $UID
+#
+#RUN adduser -u ${UID} --disabled-password --gecos "" username
+##RUN mkdir /home/username/.ssh
+#RUN chown -R username:username /home/username/
+#RUN echo "export COLUMNS=300" >> /home/username/.bashrc
+##RUN echo "alias sf=/app/www/bin/console" >> /home/appuser/.bashrc
+
 COPY ./php.ini /usr/local/etc/php/php.ini
 
 RUN apt-get update \
