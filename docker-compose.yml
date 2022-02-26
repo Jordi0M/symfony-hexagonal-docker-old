@@ -9,3 +9,12 @@ services:
       - 300:80
     volumes:
       - ./public:/app/www/public
+    depends_on:
+      - php-fpm
+
+  php-fpm:
+    container_name: php-fpm
+    build:
+      context: ./etc/docker/php
+    volumes:
+      - ./:/app/www
